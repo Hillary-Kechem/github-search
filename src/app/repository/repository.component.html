@@ -1,1 +1,20 @@
-<p>repository works!</p>
+<div class="container">
+   
+    <div class="row">
+        <h2>Repositories</h2>
+        <div class="col-md-3" *ngFor="let repo of repos">
+            <div class="card2">
+                <div class="card border-success mt-5">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{repo.name}}</h5>
+                        <p class="card-text">{{repo.description}}</p>
+                        <a href="{{repo.html_url}}" class="card-link" class="btn btn-sm btn-primary">View
+                            the
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
