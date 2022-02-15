@@ -1,1 +1,69 @@
-<p>user works!</p>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Github User Search</h4>
+                </div>
+                <div class="card-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input size="40" name="user"  (keyup)='findUser()'[(ngModel)]="user" type="search" class="form-control"
+                                placeholder="Github User Search">
+                        </div><br>
+                        <div>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container" id="container">
+    <div class="col-md-4">
+        <div class="carduser" *ngIf="personal">
+            <div class="card mt-5 ">
+                <img src="{{personal.avatar_url}}" class="card-img-top" alt="..." height="300">
+                <div class="card-body">
+                    <h2 class="card-title">Name:{{personal.name}}</h2>
+                    <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Bio:{{personal.bio}}</li>
+                    <li class="list-group-item">Username:{{personal.login}}</li>
+                    <li class="list-group-item">Followers:{{personal.followers}}</li>
+                    <li class="list-group-item">Following:{{personal.following}}</li>
+                    <li class="list-group-item">Location:{{personal.location}}</li><br>
+                    <p><a href="{{personal.html_url}}" class="btn btn-primary btn-sm ">View Profile</a></p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+   
+    <div class="row">
+        <h2>Repositories</h2>
+        <div class="col-md-3" *ngFor="let repo of repos">
+            <div class="card2">
+                <div class="card border-success mt-5">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{repo.name}}</h5>
+                        <p class="card-text">{{repo.description}}</p>
+                        <a href="{{repo.html_url}}" class="card-link" class="btn btn-sm btn-primary">View
+                            the
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
