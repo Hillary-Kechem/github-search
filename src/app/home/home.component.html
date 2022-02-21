@@ -34,6 +34,32 @@
                     {{personal.name}} <small>{{personal.login}}</small>
                     <span *ngIf="personal.work">, works at{{personal.work}}</span>
                 </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="{{personal.avatar_url}}" class="img-circle img-responsive" alt ="personal image">
+                        </div>
+                        <div class="col-sm-5">
+                            <ul class="list-group">
+                                <li class="list-group-item"*ngIf="personal.bio">{{personal.bio}}</li>
+                                <li class="list-group-item"*ngIf="personal.hireable">Available for hire{{personal.hireable}}</li>
+                                <li class="list-group-item"*ngIf="personal.blog">{{personal.blog}}</li>
+                                <li class="list-group-item"*ngIf="personal.email">{{personal.email}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <p>
+                                    <span class="label label-default">{{personal.followers}} Followers</span>
+                                    <span class="label label-priamry">{{personal.following}} Following</span>
+                                    <span class="label label-success">{{personal.public_gists}} Public gists</span>
+                                    <span class="label label-info">{{personal.public_repos}}Public Repos</span>
+                                </p>
+                                <p>
+                                    <a href="{{personal.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on Github</a>
+                                </p>
+                            </div>
+                    </div>
             </div>
         </div>
        
